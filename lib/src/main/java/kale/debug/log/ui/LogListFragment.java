@@ -13,8 +13,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
-import android.widget.TextView;
 
 import java.util.LinkedList;
 
@@ -38,7 +38,7 @@ public class LogListFragment extends Fragment {
 
     private RecyclerView mLogRecycler;
     private ProgressBar loadingPb;
-    private TextView emptyTv;
+    private LinearLayout mEmptyView;
 
     private LinkedList<LogBean> mData;
     private String tag;
@@ -67,7 +67,7 @@ public class LogListFragment extends Fragment {
         mLogAdapter = new LogAdapter(getActivity(), mData);
 
         loadingPb = (ProgressBar) root.findViewById(R.id.loading_pb);
-        emptyTv = (TextView) root.findViewById(R.id.empty_tv);
+        mEmptyView = (LinearLayout) root.findViewById(R.id.empty_view);
         mLogRecycler = (RecyclerView) root.findViewById(R.id.rv_log);
 
         mLogRecycler.setAdapter(mLogAdapter);
@@ -167,13 +167,13 @@ public class LogListFragment extends Fragment {
 
     private void startLoading() {
         loadingPb.setVisibility(View.VISIBLE);
-        emptyTv.setVisibility(View.INVISIBLE);
+        mEmptyView.setVisibility(View.INVISIBLE);
     }
 
     private void stopLoading(boolean hasData) {
         loadingPb.setVisibility(View.INVISIBLE);
         if (!hasData) {
-            emptyTv.setVisibility(View.VISIBLE);
+            mEmptyView.setVisibility(View.VISIBLE);
         }
     }
 

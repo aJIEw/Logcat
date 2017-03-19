@@ -8,7 +8,6 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
@@ -70,7 +69,7 @@ public class LogActivity extends AppCompatActivity {
         mPager.setOffscreenPageLimit(TITLES.length);
         mTabStrip.setViewPager(mPager);
         mTabStrip.setIndicatorHeight(10);
-        mTabStrip.setIndicatorColor(getResources().getColor(R.color.red));
+        mTabStrip.setIndicatorColor(getResources().getColor(R.color.colorAccent));
         mTabStrip.setOnPageChangeListener(mOnPageChangeListener);
 
         mFab.setOnClickListener(mFabOnClickListener);

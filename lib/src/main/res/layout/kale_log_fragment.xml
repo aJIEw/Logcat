@@ -1,20 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             xmlns:tools="http://schemas.android.com/tools"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent"
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     >
 
-    <TextView
-        android:id="@+id/empty_tv"
+    <LinearLayout
+        android:id="@+id/empty_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="No Data"
-        android:textSize="20sp"
+        android:gravity="center"
+        android:orientation="vertical"
         android:visibility="invisible"
         tools:visibility="visible"
-        />
+        >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/no_data_found_small"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No Data"
+            android:textColor="@color/gray"
+            android:textSize="20sp"
+            />
+    </LinearLayout>
 
     <ProgressBar
         android:id="@+id/loading_pb"

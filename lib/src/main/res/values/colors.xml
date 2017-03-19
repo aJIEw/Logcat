@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="gray">#717171</color>
+    <color name="gray">#a6a6a6</color>
     <color name="blue">#2980b9</color>
     <color name="green">#27ae60</color>
     <color name="yellow">#f39c12</color>
@@ -11,5 +11,5 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
 
-    <color name="highlight">#d9d8d8</color>
+    <color name="highlight">#f2f2f2</color>
 </resources>

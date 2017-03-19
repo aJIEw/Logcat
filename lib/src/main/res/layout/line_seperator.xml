@@ -6,8 +6,8 @@
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="1dp"
+        android:layout_height="0.5dp"
         android:layout_marginBottom="10dp"
         android:layout_marginTop="10dp"
-        android:background="#8b8989"/>
+        android:background="@drawable/line_divider"/>
 </LinearLayout>

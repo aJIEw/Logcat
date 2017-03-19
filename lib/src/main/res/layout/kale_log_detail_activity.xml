@@ -111,6 +111,7 @@
                 android:textIsSelectable="true"
                 android:selectAllOnFocus="true"
                 android:textSize="16sp"
+                android:paddingBottom="20dp"
                 tools:text="Before Android 4.1, method int android.support.v7.widget.ListViewCompat.lookForSelectablePosition(int, boolean) would have incorrectly overridden the package-private method in android.widget.ListView"
                 />
         </LinearLayout>

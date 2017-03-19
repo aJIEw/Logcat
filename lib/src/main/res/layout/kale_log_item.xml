@@ -5,19 +5,20 @@
               android:layout_width="match_parent"
               android:layout_height="wrap_content"
               android:orientation="vertical"
-              android:paddingLeft="10dp"
-              android:paddingRight="10dp"
+              android:paddingLeft="15dp"
+              android:paddingRight="15dp"
               android:background="@drawable/rv_row"
     >
 
     <LinearLayout
-        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:gravity="start"
+        android:orientation="horizontal"
         android:textAlignment="textStart"
         >
+
         <TextView
             android:id="@+id/tag_tv"
             android:layout_width="wrap_content"
@@ -37,7 +38,6 @@
             android:id="@+id/time_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginRight="20dp"
             android:textColor="#aaaaaa"
             android:textSize="12sp"
             tools:text="time"
@@ -48,6 +48,7 @@
         android:id="@+id/msg_tv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
         android:layout_marginBottom="5dp"
         android:ellipsize="end"
         android:maxLines="1"
