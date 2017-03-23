@@ -7,7 +7,7 @@
               android:orientation="vertical"
               android:paddingLeft="15dp"
               android:paddingRight="15dp"
-              android:background="@drawable/rv_row"
+              android:background="@drawable/ripple"
     >
 
     <LinearLayout
