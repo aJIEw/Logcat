@@ -2,6 +2,7 @@ package kale.debug.log.ui;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
@@ -11,8 +12,6 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
-
-import com.astuetz.PagerSlidingTabStrip;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,7 +33,8 @@ public class LogActivity extends AppCompatActivity {
 
     private Toolbar mToolbar;
     private ViewPager mPager;
-    private PagerSlidingTabStrip mTabStrip;
+    //private PagerSlidingTabStrip mTabStrip;
+    private TabLayout mTabLayout;
     private FloatingActionButton mFab;
     private EditText tagEt;
 
@@ -45,16 +45,16 @@ public class LogActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.kale_log_activity);
 
-        mToolbar = (Toolbar) findViewById(R.id.toolbar_log);
-        mPager = (ViewPager) findViewById(R.id.log_vp);
-        mTabStrip = (PagerSlidingTabStrip) findViewById(R.id.tabs);
-        mFab = (FloatingActionButton) findViewById(R.id.clear_log_btn);
-        tagEt = (EditText) findViewById(R.id.log_et);
-
         initViews();
     }
 
     private void initViews() {
+        mToolbar = (Toolbar) findViewById(R.id.toolbar_log);
+        mPager = (ViewPager) findViewById(R.id.log_vp);
+        mTabLayout = (TabLayout) findViewById(R.id.tabs);
+        mFab = (FloatingActionButton) findViewById(R.id.clear_log_btn);
+        tagEt = (EditText) findViewById(R.id.log_et);
+
         setSupportActionBar(mToolbar);
         ActionBar actionBar = getSupportActionBar();
         assert actionBar != null;
@@ -67,10 +67,11 @@ public class LogActivity extends AppCompatActivity {
 
         mPager.setAdapter(mPagerAdapter);
         mPager.setOffscreenPageLimit(TITLES.length);
-        mTabStrip.setViewPager(mPager);
-        mTabStrip.setIndicatorHeight(10);
-        mTabStrip.setIndicatorColor(getResources().getColor(R.color.colorAccent));
-        mTabStrip.setOnPageChangeListener(mOnPageChangeListener);
+        mTabLayout.setupWithViewPager(mPager);
+        //mTabStrip.setViewPager(mPager);
+        //mTabStrip.setIndicatorHeight(10);
+        //mTabStrip.setIndicatorColor(getResources().getColor(R.color.colorAccent));
+        //mTabStrip.setOnPageChangeListener(mOnPageChangeListener);
 
         mFab.setOnClickListener(mFabOnClickListener);
     }
@@ -88,22 +89,6 @@ public class LogActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
-
-    private ViewPager.OnPageChangeListener mOnPageChangeListener = new ViewPager.OnPageChangeListener() {
-        @Override
-        public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-        }
-
-        @Override
-        public void onPageSelected(int position) {
-            updateLog(fragments.get(position));
-        }
-
-        @Override
-        public void onPageScrollStateChanged(int state) {
-
-        }
-    };
 
     private FragmentPagerAdapter mPagerAdapter = new FragmentPagerAdapter(getSupportFragmentManager()) {
 

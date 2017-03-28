@@ -11,7 +11,7 @@
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
+        android:layout_height="wrap_content"
         android:background="@drawable/bg_page_title"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         >
@@ -21,7 +21,6 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:gravity="center"
-            android:minHeight="?attr/actionBarSize"
             app:layout_scrollFlags="scroll|enterAlways"
             >
 
@@ -34,29 +33,23 @@
                 android:textSize="20sp"
                 />
         </android.support.v7.widget.Toolbar>
+
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tabs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:tabIndicatorColor="@color/white"
+            app:tabMode="scrollable"
+            app:theme="?attr/actionBarStyle"/>
+
     </android.support.design.widget.AppBarLayout>
 
-    <RelativeLayout
+    <android.support.v4.view.ViewPager
+        android:id="@+id/log_vp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        >
-
-        <com.astuetz.PagerSlidingTabStrip
-            android:id="@+id/tabs"
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            app:pstsShouldExpand="true"
-            />
-
-        <android.support.v4.view.ViewPager
-            android:id="@+id/log_vp"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@id/tabs"
-            />
-
-    </RelativeLayout>
+        />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/clear_log_btn"
